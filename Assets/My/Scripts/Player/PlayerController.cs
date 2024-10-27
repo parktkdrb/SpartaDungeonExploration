@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public float jumpPower;
+    public float jumpStamina;
     private Vector2 curMovementInput;
     public LayerMask groundLayerMask;
 
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Started && IsGrounded())// 
         {
             _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            CharacterManager.Instance.Player.condition.UseStamina(jumpStamina);
         }
     }
 
@@ -95,9 +97,13 @@ public class PlayerController : MonoBehaviour
             new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
             new Ray(transform.position + (-transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down)
         };
+        foreach (Ray ray in rays)
+        {
+            Debug.DrawRay(ray.origin, ray.direction * 1f, Color.red);
+        }
         for (int i = 0; i < rays.Length; i++)
         {
-            if (Physics.Raycast(rays[i], 0.1f, groundLayerMask))
+            if (Physics.Raycast(rays[i], 0.2f, groundLayerMask))
             {
                 return true;
             }
