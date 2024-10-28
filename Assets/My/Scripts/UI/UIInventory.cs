@@ -48,13 +48,6 @@ public class UIInventory : MonoBehaviour
         }
         ClearSelectedItemWindow();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void ClearSelectedItemWindow()
     {
         selectItemName.text = string.Empty;

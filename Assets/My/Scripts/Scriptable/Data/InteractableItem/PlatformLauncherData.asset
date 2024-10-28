@@ -15,5 +15,5 @@ MonoBehaviour:
   displayName: "\uBC1C\uC0AC\uAE30"
   description: "2\uCD08 \uD6C4 \uAC15\uB825\uD55C \uC810\uD504\uB97C \uC2E4\uD589\uD55C\uB2E4."
   Use: 1
-  InteractionPower: 20
+  InteractionPower: 40
   CoolDown: 20
