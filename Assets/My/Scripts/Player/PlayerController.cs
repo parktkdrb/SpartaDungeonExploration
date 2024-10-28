@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayerMask;
 
     [Header("Look")]
+    public GameObject firstPersonCamera;
+    public GameObject thirdPersonCamera;
     public Transform cameraContainer;
     public float minXlock;
     public float maxXlock;
@@ -24,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     public Action inventory;
     private Rigidbody _rigidbody;
-
+    bool isFirstPersonActive;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -125,5 +127,16 @@ public class PlayerController : MonoBehaviour
         bool toggle = Cursor.lockState == CursorLockMode.Locked;
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
+    }
+    public void OnPersonCamera(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            bool isFirstPersonActive = firstPersonCamera.activeSelf;
+
+            firstPersonCamera.SetActive(!isFirstPersonActive);
+            thirdPersonCamera.SetActive(isFirstPersonActive);
+            isFirstPersonActive = firstPersonCamera.activeSelf;
+        }
     }
 }
