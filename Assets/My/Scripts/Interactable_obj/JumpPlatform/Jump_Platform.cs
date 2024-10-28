@@ -8,6 +8,7 @@ public class Jump_Platform : interactableObject
 
     private void OnCollisionEnter(Collision collision)
     {
+        jumpPower = data.InteractionPower;
         if(collision.gameObject == CharacterManager.Instance.Player.gameObject && !data.Use)
         {
             StartCoroutine(UseCooltime(data.CoolDown));

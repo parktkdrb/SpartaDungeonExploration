@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45346fb36ea79734f9aa3f0af6f7234e, type: 3}
-  m_Name: JumpPlatform
+  m_Name: PlatformLauncherData
   m_EditorClassIdentifier: 
-  displayName: "\uC810\uD504\uB300"
-  description: "\uD50C\uB808\uC774\uC5B4\uAC00 \uC704\uC5D0 \uC62C\uB77C\uAC00\uBA74
-    \uB192\uC740 \uC810\uD504\uB97C \uC2E4\uD589\uD569\uB2C8\uB2E4."
-  Use: 0
+  displayName: "\uBC1C\uC0AC\uAE30"
+  description: "2\uCD08 \uD6C4 \uAC15\uB825\uD55C \uC810\uD504\uB97C \uC2E4\uD589\uD55C\uB2E4."
+  Use: 1
   InteractionPower: 20
-  CoolDown: 1
+  CoolDown: 20

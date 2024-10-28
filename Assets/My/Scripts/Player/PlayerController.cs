@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(IsGrounded());
+        //Debug.Log(IsGrounded());
         Move();
     }
     private void LateUpdate()

@@ -11,5 +11,6 @@ public class InteractableItemData : ScriptableObject
 
     [Header("Use")]
     public bool Use;
+    public float InteractionPower;
     public float CoolDown;
 }
