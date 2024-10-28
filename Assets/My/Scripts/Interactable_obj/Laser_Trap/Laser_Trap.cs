@@ -18,7 +18,5 @@ public class Laser_Trap : interactableObject
         laser.transform.localPosition = new Vector3(0, 10f, 0); 
         laser.transform.rotation = Quaternion.Euler(0, 0, 90);
         laser.transform.localScale = new Vector3(0.1f, 10, 0.1f);
-        // 레이저 오브젝트 생성
-
     }
 }
